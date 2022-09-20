@@ -4,6 +4,7 @@ import Categories from "./Categories";
 import Navi from "./Navi";
 import {Route,Routes} from "react-router-dom"
 import ProductDetail from "../pages/ProductDetail";
+import ReduxTest from "../pages/ReduxTest";
 
 export default function Dashboard() {
   return (
@@ -19,6 +20,7 @@ export default function Dashboard() {
           <Route exact path="/" element={<ProductList/>}/>
           <Route path="/products" element={<ProductList/>}/>
           <Route path="/products/detail/:id" element={<ProductDetail/>}/>
+          <Route path="/reduxtest" element={<ReduxTest/>}/>
         </Routes>
       </div>
     </div>
