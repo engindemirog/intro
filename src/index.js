@@ -8,16 +8,18 @@ import "primereact/resources/primereact.min.css"; //core css
 import "primeicons/primeicons.css";
 import "/node_modules/primeflex/primeflex.css";
 import { BrowserRouter } from "react-router-dom";
-import { configureStore } from "./store/configureStore";
+import store from "./store/configureStore";
 import { Provider } from "react-redux";
-
-const store = configureStore();
+import { PersistGate } from "redux-persist/integration/react";
+import persistor from "./store/persistStore"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
+    <PersistGate persistor={persistor}>
       <App />
+    </PersistGate>
     </BrowserRouter>
   </Provider>
 );

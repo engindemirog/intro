@@ -6,4 +6,12 @@ export default class ProductService{
     getProducts(){
         return axios.get(this.url)
     }
+
+    getProductById(id){
+        return axios.get(this.url+"/"+id)
+    }
+    
+    add(product){
+        return axios.post(this.url,product)
+    }
 }
